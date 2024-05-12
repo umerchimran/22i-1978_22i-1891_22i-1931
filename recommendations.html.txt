@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Recommended Tracks</h1>
+    <ul>
+        {% for track in recommendations %}
+            <li>{{ track }}</li>
+        {% endfor %}
+    </ul>
+    <form action="/submit_feedback" method="post">
+        <label for="feedback">Provide Feedback:</label>
+        <input type="text" id="feedback" name="feedback">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

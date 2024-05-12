@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Spotify Clone</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            /* Use a background image */
+            background-image: url('your_image_path.jpg');
+            /* Center and cover the background */
+            background-size: cover;
+            background-position: center;
+            /* Set background color as fallback */
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #1db954;
+            font-weight: bold;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .form-control {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .btn-primary {
+            background-color: #1db954;
+            border: none;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #1a8c4f;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+            width: 150px;
+        }
+        .btn-danger:hover {
+            background-color: #b02a37;
+        }
+        .options {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+        }
+        .options a {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>    Dashboard</h1>
+        <form class="form-inline">
+            <input type="text" class="form-control mr-2" placeholder="Search Songs">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="options">
+        <a href="#" class="btn btn-primary">----------</a>
+        <a href="#" class="btn btn-primary">Saved Songs</a>
+        <a href="#" class="btn btn-primary">Deleted Songs</a>
+        <a href="#" class="btn btn-primary">More</a>
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit" class="btn btn-danger mt-3">Sign Out</button>
+        </form>
+    </div>
+</body>
+</html>
